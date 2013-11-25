@@ -4,9 +4,17 @@ p {
 
 p.title {
 	font-family: 'PT Sans Narrow', sans-serif;
-	font-size: 23px;
+	font-size: 14px;
 	color: #444;
 	margin-top:10px;
+	margin-bottom: 0px;
+}
+
+p.creator {
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 12px;
+	color: #444;
+	margin-top:5px;
 	margin-bottom: 0px;
 }
 
@@ -20,12 +28,27 @@ p.picked_by span.picked_by_desc {
 	color: #aaa;
 }
 
-img {
+img.pick-cover {
 	border: solid 1px #BBB;
 	opacity: 0.8;
 }
 
-img:hover{
+img.pick-cover:hover{
 	border: solid 1px #777;
 	opacity: 1.0;
+}
+
+img#drop-box {
+    z-index:3;
+}
+
+#results {
+    margin: 5px 0 10px 0;
+    padding:0;
+}
+
+.result-item {
+    margin:10px 0 10px 0;
+    list-style-type:none;
+    z-index:1;
 }
