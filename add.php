@@ -7,6 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         $settings = parse_ini_file("etc/settings.ini", true);
         
+        // Setup our values to be inserted in to the DB
         $title = $_POST['title'];
         $hollis = $_POST['hollis'];
         $selected_by = $_POST['selected_by'];

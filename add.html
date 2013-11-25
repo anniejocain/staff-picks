@@ -35,9 +35,22 @@
 
       <div class="row">
         <div class="col-md-4">
-			<form id="search-form" action="">
-				<input type="text" name="input" placeholder="Title, Author, Hollis Number"><button name="button">Go</button>
+			<form id="search-form" action="" class="form-inline" role="form">
+				<div class="form-group">
+					<label class="sr-only" for="search-box">Search</label>
+					<input id="search-box" type="text" name="input" placeholder="Title, Author, Hollis Number" class="form-control">
+				</div>
+				<button name="button" class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
 			</form>
+
+			<button type="button" class="btn btn-default" id="search-prev">
+			  <span class="glyphicon glyphicon-arrow-left"></span>
+			</button>
+			<button type="button" class="btn btn-default" id="search-next">
+			  <span class="glyphicon glyphicon-arrow-right"></span>
+			</button>
+			<p id="result_count"></p>
+			
 			<div id="results"></div>
 		</div>
         <div class="col-md-4">
