@@ -50,8 +50,10 @@
 	
 	<script id="results-template" type="text/x-handlebars-template">
 		{{#each results}}
-		<p class="title">{{title}}</p>
-		<p class="title">{{creator.[0]}}</p>
+		<div>
+			<p class="title">{{title}}</p>
+			<p class="creator">{{creator.[0]}}</p>
+		</div>
 		{{/each}}
 	</script>
 
