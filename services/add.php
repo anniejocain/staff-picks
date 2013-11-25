@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
         // If we get a cover path, let's download it and write that path to the DB
         // else, just use a stock cover
-        $cover_path = "img/stock/cover" . rand(1,4) . '.png';
+        $cover_path = "img/covers/stock/cover" . rand(1,4) . '.png';
         if (!empty($_POST['cover_path'])) {
             $cover_path = download_file($_POST['cover_path'], $hollis);
         }
@@ -54,7 +54,7 @@ function download_file($url, $hollis) {
     
     $agent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)';
 
-    $fp = fopen ($file_path, 'w+');
+    $fp = fopen ("../$file_path", 'w+');
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
     curl_setopt($ch, CURLOPT_TIMEOUT, 50);

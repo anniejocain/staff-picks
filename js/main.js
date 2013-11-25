@@ -24,9 +24,16 @@ var get_column_contents = function () {
 	return {pick: image_list};
 }
 
-var source   = $('#pick-template').html();
-var template = Handlebars.compile(source);
+var get_items = function() {
+    $.ajax({
+        url: 'services/read.php',
+        dataType: 'json',
+        success: function(data){
+        	var source = $('#pick-template').html();
+            var template = Handlebars.compile(source);
+            $('#covers').html(template({pick: data.items}));
+        }
+    });
+}
 
-$('.cover-column').each(function() {
-	$(this).html(template(get_column_contents()));
-});
+get_items();
