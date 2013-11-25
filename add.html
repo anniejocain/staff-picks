@@ -35,10 +35,22 @@
 
       <div class="row">
         <div class="col-md-4">
-			<form id="search-form" action="">
-				<input type="text" name="input" placeholder="Title, Author, Hollis Number"><button name="button">Go</button>
+			<form id="search-form" action="" class="form-inline" role="form">
+				<div class="form-group">
+					<label class="sr-only" for="search-box">Search</label>
+					<input id="search-box" type="text" name="input" placeholder="Title, Author, Hollis Number" class="form-control">
+				</div>
+				<button name="button" class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
 			</form>
-			<ul id="results"></ul>
+			<button type="button" class="btn btn-default" id="search-prev">
+			  <span class="glyphicon glyphicon-arrow-left"></span>
+			</button>
+			<button type="button" class="btn btn-default" id="search-next">
+			  <span class="glyphicon glyphicon-arrow-right"></span>
+			</button>
+			<p id="result_count"></p>
+			
+			<div id="results"></div>
 		</div>
         <div class="col-md-4">
             <img src="img/awesome_image_trans.png" id="drop-box">
@@ -49,17 +61,17 @@
     </div> <!-- /container -->
 	
 	
-	<script id="results-template" type="text/x-handlebars-template">
-		{{#each results}}
-		<li class="result-item">
-		    {{#if id_isbn}}
-		        <img src="" data-isbn="{{id_isbn.[0]}}" class="cover-image">
-		    {{/if}}
-		    <p class="title">{{title}}</p>
-		    <p class="creator">{{creator.[0]}}</p>
-		</li>
-		{{/each}}
-	</script>
+    <script id="results-template" type="text/x-handlebars-template">
+             {{#each results}}
+             <li class="result-item">
+                 {{#if id_isbn}}
+                     <img src="" data-isbn="{{id_isbn.[0]}}" class="cover-image">
+                 {{/if}}
+                 <p class="title">{{title}}</p>
+                 <p class="creator">{{creator.[0]}}</p>
+             </li>
+             {{/each}}
+     </script>
 
 	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>

@@ -1,6 +1,6 @@
 <?php	
 
-require_once('keys.php');
+$settings = parse_ini_file("etc/settings.ini", true);
 
 $q = $_GET['query'];
 	
@@ -9,7 +9,7 @@ $json = array();
 // Send request to Amazon API
 //$pxml = aws_signed_request("com", array("Operation"=>"ItemSearch","SearchIndex"=>"Books","Keywords"=>$q,"ResponseGroup"=>"Large"), $amazon_public_key, $amazon_private_key, $amazon_assoc_id);
 
-$pxml = aws_signed_request("com", array("Operation"=>"ItemLookup","SearchIndex"=>"Books","IdType"=>"ISBN","ItemId"=>$q,"ResponseGroup"=>"Large"), $amazon_public_key, $amazon_private_key, $amazon_assoc_id);
+$pxml = aws_signed_request("com", array("Operation"=>"ItemLookup","SearchIndex"=>"Books","IdType"=>"ISBN","ItemId"=>$q,"ResponseGroup"=>"Large"), $settings['AMAZON']['PUBLIC_KEY'], $settings['AMAZON']['PRIVATE_KEY'], $settings['AMAZON']['ASSOC_ID']);
   	
 $books_fields = array('thumbnail', 'display');
 
