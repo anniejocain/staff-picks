@@ -1,5 +1,18 @@
+div.page-header h1 a {
+    text-decoration: none;
+    color: #333333;
+}
+
 p {
 	font-family: 'Open Sans', sans-serif;
+}
+
+.cover-column p.title {
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 20px;
+	color: #444;
+	margin-top:10px;
+	margin-bottom: 0px;
 }
 
 p.title {
