@@ -67,7 +67,7 @@ var button_manager = function() {
     }    
 
     // Next paging button    
-    if ((start + 5 >= num_found)) {
+    if ((start + 3 >= num_found)) {
         $("#search-next").addClass('disabled');
     } else {
         $("#search-next").removeClass('disabled');
@@ -84,7 +84,7 @@ $( "#search-form" ).submit(function( event ) {
 
 // When the previous paging button is clicked
 $( "#search-prev" ).click(function() {
-    start = start - 5;
+    start = start - 3;
     if (start < 0) {
         start = 0;
     }
