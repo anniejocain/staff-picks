@@ -6,7 +6,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if(!empty($_POST['title']) && !empty($_POST['hollis']) && !empty($_POST['selected_by'])) {
         
         $settings = parse_ini_file("etc/settings.ini", true);
-        print_r($settings);
         
         $title = $_POST['title'];
         $hollis = $_POST['hollis'];
