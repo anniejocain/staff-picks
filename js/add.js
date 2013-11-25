@@ -27,7 +27,7 @@ var search_lc = function() {
                 var image = $(this);
                 var isbn = $(this).data('isbn');
                 $.ajax({
-                    url: 'amazon.php?query=' + isbn,
+                    url: '/staff-picks/services/amazon.php?query=' + isbn,
                     dataType: 'json',
                     success: function(data){
                         image.attr('src', data[0].thumbnail);

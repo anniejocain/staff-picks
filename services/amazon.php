@@ -1,6 +1,6 @@
 <?php	
 
-$settings = parse_ini_file("etc/settings.ini", true);
+$settings = parse_ini_file("../etc/settings.ini", true);
 
 $q = $_GET['query'];
 	
