@@ -1,0 +1,31 @@
+p {
+	font-family: 'Open Sans', sans-serif;
+}
+
+p.title {
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 23px;
+	color: #444;
+	margin-top:10px;
+	margin-bottom: 0px;
+}
+
+p.picked_by {
+	font-size: 13px;
+	color: #444;
+	margin-bottom: 50px;
+}
+
+p.picked_by span.picked_by_desc {
+	color: #aaa;
+}
+
+img {
+	border: solid 1px #BBB;
+	opacity: 0.8;
+}
+
+img:hover{
+	border: solid 1px #777;
+	opacity: 1.0;
+}
