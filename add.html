@@ -15,7 +15,7 @@
 
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	
+
     <link href="css/main.css" rel="stylesheet">
 
 
@@ -42,6 +42,18 @@
 		</div>
         <div class="col-md-4">
             <img src="img/awesome_image_trans.png" id="drop-box">
+            <form id="pick-form" action="" role="form">
+			    <div class="form-group">
+			        <label for="moniker">Moniker</label>
+                    <input type="text" id="moniker" class="form-control" placeholder="Your Moniker">
+                </div>
+			    <div class="form-group">
+			        <label for="library">Library</label>
+                    <input type="text" id="library" class="form-control" placeholder="Your Library">
+                </div>
+				<button name="button" type="submit" class="btn btn-default">Okay, I've made my pick</button>
+			</form>
+			<h2 id="pick-in-stone"></h2>
         </div>
         <div class="col-md-4">
         </div>
@@ -51,7 +63,7 @@
 	
 	<script id="results-template" type="text/x-handlebars-template">
 		{{#each results}}
-		<li class="result-item">
+		<li class="result-item" data-hollis="{{id_inst}}">
 		    {{#if id_isbn}}
 		        <img src="" data-isbn="{{id_isbn.[0]}}" class="cover-image">
 		    {{/if}}
@@ -63,6 +75,7 @@
 
 	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/typeahead.min.js"></script>
 	<script type="text/javascript" src="js/handlebars-v1.1.2.js"></script>
     <script type="text/javascript" src="js/add.js"></script>
   </body>
