@@ -1,6 +1,4 @@
 .DS_Store
-<<<<<<< HEAD
-keys.php
-=======
 etc/settings.ini
->>>>>>> 23062bad63e9c9c472ac32e128193ce31e0c05dc
+img/covers/*
+!img/covers/stock
