@@ -1,5 +1,5 @@
 #pick-container {
-    width: 4000px;
+    width: 40000px;
 
     margin: 0 auto 0 auto; 
     text-align: center;
@@ -11,12 +11,17 @@
     padding-right: 30px; 
 } 
 
+.main-container {
+	margin-left:-230px;
+	position:relative;
+	padding:15px;
+}
+
 .search-hollis {
 	width:220px;
 	display:inline;
 	float:left;
 	margin-right:30px;
-	display:none;
 }
 
 .add-yours {
@@ -25,7 +30,7 @@
 	border:1px solid #333;
 	display:inline;
 	float:left;
-	margin-right:30px;
+	margin-right:65px;
 	padding:15px;
 }
 
@@ -100,7 +105,7 @@ img#drop-box {
 }
 
 .pick-target {
-	height:330px;
+	height:340px;
 }
 
 .pick-target .glyphicon {
