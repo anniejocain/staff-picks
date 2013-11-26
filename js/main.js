@@ -31,7 +31,7 @@ var get_items = function() {
         success: function(data){
         	var source = $('#pick-template').html();
             var template = Handlebars.compile(source);
-            $('#pick-container').append(template({pick: data.items}));
+            $('#staff-picks').html(template({pick: data.items}));
         }
     });
 }
@@ -39,10 +39,14 @@ var get_items = function() {
 // pick selection code
 
 $('#add-pick').click(function(){
-	$('.search-hollis').toggle('slide');
-	$('#add-pick,.proj-desc').fadeOut('slow');
-	$('.pick-target .glyphicon').fadeIn('slow');
-	$('#pick-form').fadeIn('slow');
+	 $( ".main-container" ).animate({
+		left: "+=230",
+		}, 500, function() {
+		$('#add-pick,.proj-desc').fadeOut('slow');
+		$('.pick-target .glyphicon').fadeIn('slow');
+		$('#pick-form').fadeIn('slow');
+	});
+	//$('.search-hollis').toggle('slide');
 });
 
 // Our handlebars seach results template
@@ -96,8 +100,15 @@ $( "#pick-form" ).submit(function(event){
         type: 'POST',
         data: {title: title, hollis: hollis, selected_by: selected_by, cover_path: cover},
         success: function(data){
-            $('#pick-form').fadeOut();
-            $('#pick-in-stone').text(selected_by).fadeIn();
+            $( ".main-container" ).animate({
+				left: "-=620",
+				}, 500, function() {
+					 $( "#pick-container" ).fadeOut( "slow", function() {
+					 	get_items();
+						$( "#pick-container" ).fadeIn( "slow");
+					});
+					
+			});
         }
     });
     event.preventDefault();
