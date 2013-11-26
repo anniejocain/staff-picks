@@ -31,7 +31,7 @@ var get_items = function() {
         success: function(data){
         	var source = $('#pick-template').html();
             var template = Handlebars.compile(source);
-            $('#covers').html(template({pick: data.items}));
+            $('#pick-container').html(template({pick: data.items}));
         }
     });
 }

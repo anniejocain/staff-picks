@@ -19,15 +19,17 @@
 
   <body>
     <div class="container">
-		<div id="covers"></div>
+		<div id="pick-container"></div>
     </div> <!-- /container -->
 	
 	
 	<script id="pick-template" type="text/x-handlebars-template">
 		{{#each pick}}
+		<div class="pick">
 		<img src="{{cover_path}}">
-		<!--<p class="title">{{title}}</p>
-		<p class="picked_by"><span class="picked_by_desc">selected by</span> someone in some library</p>-->
+		<p class="title">{{title}}</p>
+		<p class="picked_by"><span class="picked_by_desc">selected by </span>{{selected_by}}</p>
+		</div>
 		{{/each}}
 	</script>
 

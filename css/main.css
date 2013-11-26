@@ -1,6 +1,16 @@
-#covers {
+#pick-container {
     width: 4000px;
+
+    margin: 0 auto 0 auto; 
+    text-align: center;
 }
+
+.pick { 
+    display: inline;
+    float: left; 
+    padding-right: 30px; 
+} 
+
 
 div.page-header h1 a {
     text-decoration: none;
@@ -25,6 +35,7 @@ p.title {
 	color: #444;
 	margin-top:10px;
 	margin-bottom: 0px;
+	
 }
 
 p.creator {
@@ -39,6 +50,7 @@ p.picked_by {
 	font-size: 13px;
 	color: #444;
 	margin-bottom: 50px;
+
 }
 
 p.picked_by span.picked_by_desc {
