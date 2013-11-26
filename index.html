@@ -22,8 +22,6 @@
 
   <body>
     <div class="main-container">
-
-
 		<div id="pick-container">
 			<div class="search-hollis pick">
 				<form id="search-form" action="" class="form-inline" role="form">
@@ -72,7 +70,7 @@
 	<script id="pick-template" type="text/x-handlebars-template">
 		{{#each pick}}
 		<div class="pick">
-		<img src="{{cover_path}}">
+		<img src="{{cover_path}}" {{{last_image_helper @index}}}>
 		<p class="title">{{title}}</p>
 		<p class="picked_by"><span class="picked_by_desc">selected by </span>{{selected_by}}</p>
 		</div>
@@ -92,6 +90,7 @@
 	</script>
 
 	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="js/waypoints.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/typeahead.min.js"></script>
 	<script type="text/javascript" src="js/handlebars-v1.1.2.js"></script>
