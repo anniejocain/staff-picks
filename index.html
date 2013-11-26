@@ -9,6 +9,9 @@
     <link rel="shortcut icon" href="img/favicon.png">
 
     <title>Staff Picks, 2013</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
 
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -18,7 +21,39 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="main-container">
+    	<div class="search-hollis">
+			<form id="search-form" action="" class="form-inline" role="form">
+				<div class="form-group">
+					<label class="sr-only" for="search-box">Search</label>
+					<input id="search-box" type="text" name="input" placeholder="Title, Author, Hollis ID" class="form-control">
+				</div>
+				<button name="button" class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+			</form>
+			<button type="button" class="btn btn-default" id="search-prev">
+			  <span class="glyphicon glyphicon-arrow-left"></span>
+			</button>
+			<button type="button" class="btn btn-default" id="search-next">
+			  <span class="glyphicon glyphicon-arrow-right"></span>
+			</button>
+			<p id="result_count"></p>
+			
+			<div id="results"></div>
+		</div>
+    	<div class="add-yours" id="drop-box">
+  			<button id="add-pick" type="button" class="btn btn-primary btn-lg">Add your own</button>
+  			<form id="pick-form" action="" role="form">
+			    <div class="form-group">
+			        <label for="moniker">Moniker</label>
+                    <input type="text" id="moniker" class="form-control" placeholder="Carefree Cataloger, Graphic Novel Lover, etc.">
+                </div>
+			    <div class="form-group">
+			        <label for="library">Location</label>
+                    <input type="text" id="library" class="form-control" placeholder="Lamont Library, Cozy Cubicle, etc.">
+                </div>
+				<button name="button" type="submit" class="btn btn-default">Okay, this is my pick</button>
+			</form>
+  		</div>
 		<div id="pick-container"></div>
     </div> <!-- /container -->
 	
@@ -32,8 +67,22 @@
 		</div>
 		{{/each}}
 	</script>
+	
+	<script id="results-template" type="text/x-handlebars-template">
+		{{#each results}}
+		<li class="result-item" data-hollis="{{id_inst}}">
+		    {{#if id_isbn}}
+		        <img src="" data-isbn="{{id_isbn.[0]}}" class="cover-image" data-cover="">
+		    {{/if}}
+		    <p class="title">{{title}}</p>
+		    <p class="creator">{{creator.[0]}}</p>
+		</li>
+		{{/each}}
+	</script>
 
 	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/typeahead.min.js"></script>
 	<script type="text/javascript" src="js/handlebars-v1.1.2.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
   </body>
