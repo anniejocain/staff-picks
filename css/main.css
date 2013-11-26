@@ -4,9 +4,9 @@
 }
 
 #pick-container {
-    width: 100%;
-    overflow: auto;
-    white-space: nowrap; 
+    margin-left:-230px;
+	position:relative;
+	padding:15px;
 }
 
 .pick {
@@ -15,9 +15,9 @@
 }
 
 .main-container {
-	margin-left:-230px;
-	position:relative;
-	padding:15px;
+	width: 100%;
+    overflow: auto;
+    white-space: nowrap; 
 }
 
 .search-hollis {

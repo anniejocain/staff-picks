@@ -39,7 +39,7 @@ var get_items = function() {
 // pick selection code
 
 $('#add-pick').click(function(){
-	 $( ".main-container" ).animate({
+	 $( "#pick-container" ).animate({
 		left: "+=230",
 		}, 500, function() {
 		$('#add-pick,.proj-desc').fadeOut('slow');
@@ -100,13 +100,13 @@ $( "#pick-form" ).submit(function(event){
         type: 'POST',
         data: {title: title, hollis: hollis, selected_by: selected_by, cover_path: cover},
         success: function(data){
-            $(".main-container").animate({
+            $("#pick-container").animate({
 				'margin-left': "-=620",
 				}, 500, function() {
 					 $("#pick-container").fadeOut("slow", function() {
 					 	get_items();
 						$("#pick-container").animate({opacity: '100%'}, 'slow', 					function() {
-    $("#pick-container").css('display', 'inline')
+    $("#pick-container").css('display', 'block')
 });
 					});
 					
