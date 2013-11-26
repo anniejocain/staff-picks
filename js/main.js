@@ -111,10 +111,11 @@ $( "#pick-form" ).submit(function(event){
 				'margin-left': "-=620",
 				}, 500, function() {
 					 $("#pick-container").fadeOut("slow", function() {
-					 	get_items();
-						$("#pick-container").animate({opacity: '100%'}, 'slow', 					function() {
-    $("#pick-container").css('display', 'block')
-});
+					     $('#staff-picks').html('');
+					     get_items();
+                         $("#pick-container").animate({opacity: '100%'}, 'slow', function() {
+                             $("#pick-container").css('display', 'block')
+                         });
 					});
 					
 			});
