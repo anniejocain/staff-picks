@@ -40,6 +40,8 @@ var get_items = function() {
 
 $('#add-pick').click(function(){
 	$('.search-hollis').toggle('slide');
+	$('#add-pick').fadeOut('slow');
+	$('.pick-target .glyphicon').fadeIn('slow');
 	$('#pick-form').fadeIn('slow');
 });
 

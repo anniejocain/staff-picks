@@ -99,8 +99,21 @@ img#drop-box {
     z-index:1;
 }
 
+.pick-target {
+	height:330px;
+}
+
+.pick-target .glyphicon {
+	display:none;
+	font-size:172px;
+	color:#7F8899;
+	position:absolute;
+	top:85px;
+	opacity:.1;
+	margin-left:75px;
+}
+	
 #pick-form {
-	margin-top:320px;
 	display:none;
 }
 

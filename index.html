@@ -41,17 +41,20 @@
 			<div id="results"></div>
 		</div>
     	<div class="add-yours" id="drop-box">
-  			<button id="add-pick" type="button" class="btn btn-primary btn-lg">Add your own</button>
+    		<div class="pick-target">
+  			<button id="add-pick" type="button" class="btn btn-primary btn-lg btn-block">Add your own</button>
+  			<div class="glyphicon glyphicon-record"></div>
+  			</div>
   			<form id="pick-form" action="" role="form">
 			    <div class="form-group">
-			        <label for="moniker">Moniker</label>
+			        <label for="moniker">Selected by</label>
                     <input type="text" id="moniker" class="form-control" placeholder="Carefree Cataloger, Graphic Novel Lover, etc.">
                 </div>
 			    <div class="form-group">
-			        <label for="library">Location</label>
+			        <label for="library">in</label>
                     <input type="text" id="library" class="form-control" placeholder="Lamont Library, Cozy Cubicle, etc.">
                 </div>
-				<button name="button" type="submit" class="btn btn-default">Okay, this is my pick</button>
+				<button name="button" type="submit" class="btn btn-default btn-block">Okay, this is my pick</button>
 			</form>
   		</div>
 		<div id="pick-container"></div>
