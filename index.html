@@ -22,42 +22,52 @@
 
   <body>
     <div class="main-container">
-    	<div class="search-hollis">
-			<form id="search-form" action="" class="form-inline" role="form">
-				<div class="form-group">
-					<label class="sr-only" for="search-box">Search</label>
-					<input id="search-box" type="text" name="input" placeholder="Title, Author, Hollis ID" class="form-control">
-				</div>
-				<button name="button" class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-			</form>
-			<button type="button" class="btn btn-default" id="search-prev">
-			  <span class="glyphicon glyphicon-arrow-left"></span>
-			</button>
-			<button type="button" class="btn btn-default" id="search-next">
-			  <span class="glyphicon glyphicon-arrow-right"></span>
-			</button>
-			<p id="result_count"></p>
+
+
+		<div id="pick-container">
+			<div class="search-hollis pick">
+				<form id="search-form" action="" class="form-inline" role="form">
+					<div class="form-group">
+						<label class="sr-only" for="search-box">Search</label>
+						<input id="search-box" type="text" name="input" placeholder="Title, Author, Hollis ID" class="form-control">
+					</div>
+					<button name="button" class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+				</form>
+				<button type="button" class="btn btn-default" id="search-prev">
+				  <span class="glyphicon glyphicon-arrow-left"></span>
+				</button>
+				<button type="button" class="btn btn-default" id="search-next">
+				  <span class="glyphicon glyphicon-arrow-right"></span>
+				</button>
+				<p id="result_count"></p>
+
+				<div id="results"></div>
+			</div>
 			
-			<div id="results"></div>
+			
+	    	<div class="add-yours pick" id="drop-box">
+	    		<div class="pick-target">
+				<p class="proj-desc">If the Harvard University Library was the world's largest bookstore, and the staff were to put together a Staff Picks bookshelf, what would it look like?</p>
+				<p class="proj-desc">All Harvard staff and library affiliates are invited to add something they read and loved in 2013 to the Staff Picks bookshelf. On December d, the selection process will end and the shelf will be open for viewing.</p>
+	  			<button id="add-pick" type="button" class="btn btn-primary btn-lg btn-block">Add your own</button>
+	  			<div class="glyphicon glyphicon-record"></div>
+	  			</div>
+	  			<form id="pick-form" action="" role="form">
+				    <div class="form-group">
+				        <label for="moniker">Selected by</label>
+	                    <input type="text" id="moniker" class="form-control" placeholder="Carefree Cataloger, Graphic Novel Lover, etc.">
+	                </div>
+				    <div class="form-group">
+				        <label for="library">in</label>
+	                    <input type="text" id="library" class="form-control" placeholder="Lamont Library, Cozy Cubicle, etc.">
+	                </div>
+					<button name="button" type="submit" class="btn btn-default btn-block">Okay, this is my pick</button>
+				</form>
+	  		</div>
+			
+			
+			
 		</div>
-    	<div class="add-yours" id="drop-box">
-    		<div class="pick-target">
-  			<button id="add-pick" type="button" class="btn btn-primary btn-lg btn-block">Add your own</button>
-  			<div class="glyphicon glyphicon-record"></div>
-  			</div>
-  			<form id="pick-form" action="" role="form">
-			    <div class="form-group">
-			        <label for="moniker">Selected by</label>
-                    <input type="text" id="moniker" class="form-control" placeholder="Carefree Cataloger, Graphic Novel Lover, etc.">
-                </div>
-			    <div class="form-group">
-			        <label for="library">in</label>
-                    <input type="text" id="library" class="form-control" placeholder="Lamont Library, Cozy Cubicle, etc.">
-                </div>
-				<button name="button" type="submit" class="btn btn-default btn-block">Okay, this is my pick</button>
-			</form>
-  		</div>
-		<div id="pick-container"></div>
     </div> <!-- /container -->
 	
 	

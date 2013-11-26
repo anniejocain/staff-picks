@@ -31,7 +31,7 @@ var get_items = function() {
         success: function(data){
         	var source = $('#pick-template').html();
             var template = Handlebars.compile(source);
-            $('#pick-container').html(template({pick: data.items}));
+            $('#pick-container').append(template({pick: data.items}));
         }
     });
 }
@@ -40,7 +40,7 @@ var get_items = function() {
 
 $('#add-pick').click(function(){
 	$('.search-hollis').toggle('slide');
-	$('#add-pick').fadeOut('slow');
+	$('#add-pick,.proj-desc').fadeOut('slow');
 	$('.pick-target .glyphicon').fadeIn('slow');
 	$('#pick-form').fadeIn('slow');
 });

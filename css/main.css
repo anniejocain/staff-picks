@@ -1,6 +1,5 @@
-#pick-container {
-    width: 4000px;
-
+/*#pick-container {
+    width: 8000px;
     margin: 0 auto 0 auto; 
     text-align: center;
 }
@@ -9,7 +8,23 @@
     display: inline;
     float: left; 
     padding-right: 30px; 
-} 
+}*/
+
+.proj-desc {
+    white-space: normal;
+    width: 300px;
+}
+
+#pick-container {
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap; 
+}
+
+.pick {
+    display: inline-block;
+    width: 450px;
+}
 
 .search-hollis {
 	width:220px;

@@ -10,7 +10,7 @@
 
     mysql_select_db($settings['MYSQL']['DB'], $con);
 
-    $retrieve = mysql_query("SELECT * FROM `item` limit 1000") or die(mysql_error());
+    $retrieve = mysql_query("SELECT * FROM `item` order by -id limit 1000") or die(mysql_error());
     $item_details = array();
     while($row = mysql_fetch_assoc($retrieve)) {
         $item_details[] = $row;
