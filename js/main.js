@@ -1,19 +1,47 @@
+var items; // Our selections.
 
-// 
+Handlebars.registerHelper("last_image_helper", function(image_index) {
+    // If we hit index 9, we've loaded 10 images, so that's where 
+    // we'll set our waypoint (for infinite scrolling)
+  if (image_index== 9) {
+      return 'class="last-image"';
+  }
+});
+
 var get_items = function() {
     $.ajax({
         url: 'services/read.php',
         dataType: 'json',
-        success: function(data){
-        	var source = $('#pick-template').html();
-            var template = Handlebars.compile(source);
-            $('#staff-picks').html(template({pick: data.items}));
+        success: function(data) {
+            items = data.items;
+            draw_selections();
         }
     });
 }
 
-// pick selection code
+var selections_source = $('#pick-template').html();
+var selections_template = Handlebars.compile(selections_source);
 
+var draw_selections = function() {
+    if (items.length){
+        items_to_draw = items.splice(0, 20);
+        $('.last-image').removeClass('last-image');
+        $('#staff-picks').append(selections_template({pick: items_to_draw}));
+
+        $('.last-image').waypoint(function(direction) {
+            if (direction === 'right'){
+                draw_selections();
+            }
+        }, {
+                horizontal: true,
+                context: '#pick-container'
+            });
+    }
+}
+
+// one function to lad
+
+// pick selection code
 $('#add-pick').click(function(){
 	 $( "#pick-container" ).animate({
 		left: "+=230",
@@ -29,10 +57,13 @@ $('#add-pick').click(function(){
 var source   = $('#results-template').html();
 var template = Handlebars.compile(source);
 
+
 // Our Library Cloud variables
 var start = 0;
 var num_found = 0;
 var q = '';
+
+
 
 var search_lc = function() {
     // Send our queries to LibraryCloud and write the results to the screen
@@ -208,6 +239,7 @@ local: [
 "Wolbach Library"
 ]
 });
+
 
 // Managing the paging buttons on page load
 button_manager();
