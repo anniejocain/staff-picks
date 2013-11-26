@@ -100,12 +100,14 @@ $( "#pick-form" ).submit(function(event){
         type: 'POST',
         data: {title: title, hollis: hollis, selected_by: selected_by, cover_path: cover},
         success: function(data){
-            $( ".main-container" ).animate({
-				left: "-=620",
+            $(".main-container").animate({
+				'margin-left': "-=620",
 				}, 500, function() {
-					 $( "#pick-container" ).fadeOut( "slow", function() {
+					 $("#pick-container").fadeOut("slow", function() {
 					 	get_items();
-						$( "#pick-container" ).fadeIn( "slow");
+						$("#pick-container").animate({opacity: '100%'}, 'slow', 					function() {
+    $("#pick-container").css('display', 'inline')
+});
 					});
 					
 			});
