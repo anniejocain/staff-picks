@@ -1,8 +1,8 @@
 var items; // Our selections.
 
-Handlebars.registerHelper('dotdotdot', function(str, dotdotdot_to_this) {
-  if (str.length > dotdotdot_to_this)
-    return str.substring(0,dotdotdot_to_this) + '...';
+Handlebars.registerHelper('dotdotdot', function(str) {
+  if (str.length > 30)
+    return str.substring(0,30) + '...';
   return str;
 });
 
@@ -50,9 +50,8 @@ $('#add-pick').click(function(){
 	 $( "#pick-container" ).animate({
 		left: "+=255",
 		}, 500, function() {
-		$('#add-pick,.proj-desc').fadeOut('slow');
-		$('.pick-target .glyphicon').fadeIn('slow');
-		$('#pick-form').fadeIn('slow');
+		$('#add-pick,.proj-desc').fadeOut(350);
+		$('.target-group').fadeIn(350);
 	});
 	//$('.search-hollis').toggle('slide');
 });
@@ -83,7 +82,7 @@ var search_lc = function() {
             num_found = data.num_found;
             $('#result_count').html(num_found.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' matches');
             button_manager();
-            $( ".result-item" ).draggable({ revert: "invalid" });
+            $( ".result-item" ).draggable({ revert: "invalid", cursor: 'move' });
             $( ".cover-image" ).each(function( item ) {
                 var image = $(this);
                 var isbn = $(this).data('isbn');
@@ -113,7 +112,7 @@ $( "#pick-form" ).submit(function(event){
         success: function(data){
             $("#pick-container").animate({
 				'margin-left': "-=645",
-				}, 500, function() {
+				}, 400, function() {
 					 $("#pick-container").fadeOut("slow", function() {
 					     $('#staff-picks').html('');
 					     get_items();
@@ -175,10 +174,14 @@ $( "#search-next" ).click(function() {
 
 // When an items is dragged from the the results list to the box
 $( "#drop-box" ).droppable({
+    activeClass: 'target-highlight',
+    hoverClass: 'target-hovering',
     drop: function( event, ui ) {
         $('.result-item').draggable('disable');
-        $( this )
-        .addClass( "ui-state-highlight" ).addClass('full');
+        $('.target-group').fadeOut('slow');
+        $('#pick-form').fadeIn('slow');
+        $( this ).parent()
+        .addClass("target-acquired");
         $(ui.draggable).addClass('picked');
     }
 });
