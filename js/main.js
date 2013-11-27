@@ -34,7 +34,7 @@ var draw_selections = function() {
             }
         }, {
                 horizontal: true,
-                context: '#pick-container'
+                context: '.main-container'
             });
     }
 }
