@@ -172,6 +172,18 @@ $( "#search-next" ).click(function() {
     search_lc();
 });
 
+$("#results").hover(function() { console.log('hovering');
+    $("#drop-box").addClass("target-highlight");
+});
+
+$( "#results" ).hover(
+function() {
+$("#drop-box").addClass("target-highlight");
+}, function() {
+$("#drop-box").removeClass("target-highlight");
+}
+);
+
 // When an items is dragged from the the results list to the box
 $( "#drop-box" ).droppable({
     activeClass: 'target-highlight',
