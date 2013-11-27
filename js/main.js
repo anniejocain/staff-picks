@@ -1,10 +1,16 @@
 var items; // Our selections.
 
+Handlebars.registerHelper('dotdotdot', function(str) {
+  if (str.length > 30)
+    return str.substring(0,30) + '...';
+  return str;
+});
+
 Handlebars.registerHelper("last_image_helper", function(image_index) {
     // If we hit index 9, we've loaded 10 images, so that's where 
     // we'll set our waypoint (for infinite scrolling)
   if (image_index== 9) {
-      return 'class="last-image"';
+      return 'last-image';
   }
 });
 
@@ -38,8 +44,6 @@ var draw_selections = function() {
             });
     }
 }
-
-// one function to lad
 
 // pick selection code
 $('#add-pick').click(function(){

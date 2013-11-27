@@ -21,6 +21,7 @@
   </head>
 
   <body>
+	<div id="header">Staff Picks 2013</div>
     <div class="main-container">
 		<div id="pick-container">
 			<div class="search-hollis pick">
@@ -69,9 +70,13 @@
 	<script id="pick-template" type="text/x-handlebars-template">
 		{{#each pick}}
 		<div class="pick">
-		<img src="{{cover_path}}" {{{last_image_helper @index}}}>
-		<p class="title">{{title}}</p>
-		<p class="picked_by"><span class="picked_by_desc">selected by </span>{{selected_by}}</p>
+		<a href="http://hollis.harvard.edu/?itemid=|library/m/aleph|{{hollis}}" target="_blank">
+			<img src="{{cover_path}}" class="full-cover {{{last_image_helper @index}}}">
+		</a>
+		<a href="http://hollis.harvard.edu/?itemid=|library/m/aleph|{{hollis}}" target="_blank">
+			<p class="title">{{dotdotdot title}}</p>
+		</a>
+		<p class="picked_by"><span class="picked_by_desc">selected by </span>{{dotdotdot selected_by}}</p>
 		</div>
 		{{/each}}
 	</script>
