@@ -22,7 +22,7 @@ body {
 }
 
 #pick-container {
-    margin-left:-230px;
+    margin-left:-255px;
     position:relative;
 	padding:15px;
 }
@@ -66,7 +66,6 @@ body {
 .add-yours {
 	height:575px;
 	width:350px;
-	border:1px solid #333;
 	display:inline;
 	float:left;
 	margin-right:65px;
@@ -92,6 +91,10 @@ img#drop-box {
     z-index:3;
 }
 
+#search-form input {
+    border-color:#00A8C6;
+}
+
 #results {
     margin: 5px 0 10px 0;
     padding:0;
@@ -113,12 +116,23 @@ img#drop-box {
 	color:#7F8899;
 	position:absolute;
 	top:85px;
-	opacity:.1;
+	opacity:.3;
 	margin-left:75px;
 }
 	
 #pick-form {
 	display:none;
+}
+
+#okay-pick {
+    background-color:#00A8C6;
+    border-color:#009ab5;
+    color:#fff;
+}
+
+#okay-pick:hover {
+    background-color:#009ab5;
+    border-color:#008ba4;
 }
 
 .twitter-typeahead .tt-query,
@@ -192,7 +206,7 @@ img#drop-box {
 
 #moniker, #library {
     border-top:0;
-    border-bottom:2px solid #444;
+    border-bottom:2px solid #00A8C6;
     border-left:0;
     border-right:0;
     border-radius:0;

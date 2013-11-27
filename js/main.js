@@ -48,7 +48,7 @@ var draw_selections = function() {
 // pick selection code
 $('#add-pick').click(function(){
 	 $( "#pick-container" ).animate({
-		left: "+=230",
+		left: "+=255",
 		}, 500, function() {
 		$('#add-pick,.proj-desc').fadeOut('slow');
 		$('.pick-target .glyphicon').fadeIn('slow');
@@ -112,7 +112,7 @@ $( "#pick-form" ).submit(function(event){
         data: {title: title, hollis: hollis, selected_by: selected_by, cover_path: cover},
         success: function(data){
             $("#pick-container").animate({
-				'margin-left': "-=620",
+				'margin-left': "-=645",
 				}, 500, function() {
 					 $("#pick-container").fadeOut("slow", function() {
 					     $('#staff-picks').html('');
@@ -183,7 +183,7 @@ $( "#drop-box" ).droppable({
     }
 });
 
-$('#library').typeahead({
+/*$('#library').typeahead({
 name: 'library',
 local: [
 "Abraham Pollen Archives and Rare Book Library",
@@ -243,7 +243,7 @@ local: [
 "Widener Library",
 "Wolbach Library"
 ]
-});
+});*/
 
 
 // Managing the paging buttons on page load
