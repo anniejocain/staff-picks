@@ -30,7 +30,13 @@ body {
 .pick {
     display: inline-block;
     margin-right: 15px;
-    /*white-space: normal*/;
+}
+
+.pick-text {
+    max-width: 325px;
+    height: 300px;
+    overflow:hidden;
+    white-space: normal;
 }
 
 .pick .full-cover {
@@ -42,9 +48,9 @@ body {
 .pick .title {
 	font-family: 'PT Sans Narrow', sans-serif;
 	color: #444;
-	font-size: 20px;
+	font-size: 22px;
 	margin-top: 8px;
-	margin-bottom:0px;
+	margin-bottom:4px;
 }
 
 .pick .creator {

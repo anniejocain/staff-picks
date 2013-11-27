@@ -1,8 +1,8 @@
 var items; // Our selections.
 
-Handlebars.registerHelper('dotdotdot', function(str) {
-  if (str.length > 30)
-    return str.substring(0,30) + '...';
+Handlebars.registerHelper('dotdotdot', function(str, dotdotdot_to_this) {
+  if (str.length > dotdotdot_to_this)
+    return str.substring(0,dotdotdot_to_this) + '...';
   return str;
 });
 
