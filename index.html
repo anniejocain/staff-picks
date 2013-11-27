@@ -8,7 +8,7 @@
     <meta name="author" content="Harvard Library Innovation Lab">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Staff Picks, 2013</title>
+    <title>Staff Picks 2013</title>
     
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -90,10 +90,10 @@
 		{{#each results}}
 		<li class="result-item" data-hollis="{{id_inst}}">
 		    {{#if id_isbn}}
-		        <img src="" data-isbn="{{id_isbn.[0]}}" class="cover-image" data-cover="">
+		        <img src="" data-isbn="{{id_isbn}}" class="cover-image" data-cover="">
 		    {{/if}}
 		    <p class="title">{{title}}</p>
-		    <p class="creator">{{creator.[0]}}</p>
+		    <p class="creator">{{creator}}</p>
 		</li>
 		{{/each}}
 	</script>

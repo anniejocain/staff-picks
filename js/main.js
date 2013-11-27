@@ -73,11 +73,12 @@ var search_lc = function() {
     // get search term from input
     // send it to cloud. get results. populate column with results.
 
-    var url = 'http://librarycloud.harvard.edu/v1/api/item/?filter=keyword:' + q + '&start=' + start + '&limit=3';
+    //var url = 'http://librarycloud.harvard.edu/v1/api/item/?filter=keyword:' + q + '&start=' + start + '&limit=3';
+    var url = "services/search.php?q=" + q;
     $.ajax({
         url: url,
-        dataType: 'jsonp',
-        success: function(data){		   
+        dataType: 'json',
+        success: function(data){
             $('#results').html(template({results: data['docs']}));
             num_found = data.num_found;
             $('#result_count').html(num_found.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' matches');
@@ -172,7 +173,7 @@ $( "#search-next" ).click(function() {
     search_lc();
 });
 
-$("#results").hover(function() { console.log('hovering');
+$("#results").hover(function() {
     $("#drop-box").addClass("target-highlight");
 });
 
