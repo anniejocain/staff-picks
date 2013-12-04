@@ -18,6 +18,7 @@ var get_items = function() {
     $.ajax({
         url: 'services/read.php',
         dataType: 'json',
+        cache: false,
         success: function(data) {
             items = data.items;
             draw_selections();
