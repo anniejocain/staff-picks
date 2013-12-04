@@ -18,7 +18,6 @@ if (!empty($_GET['q'])) {
     $formats = "+material-id:matBook";
     
     $url = "http://webservices.lib.harvard.edu/rest/hollis/search/mods/?$q$formats";
-    
     $agent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)';
     $ch = curl_init();
 
@@ -37,13 +36,13 @@ if (!empty($_GET['q'])) {
     
     $total_results = $xml_response->totalResults[0];
     
-    $to_out = [];
+    $to_out = array();
     $to_out['num_found'] = (int) $total_results;
     
-    $docs = [];
+    $docs = array();
     if (!empty($xml_response->resultSet->item)) {
         foreach ($xml_response->resultSet->item as $item) {
-            $to_out_item = [];
+            $to_out_item = array();
             $raw_title = (string) $item->mods->titleInfo->title[0];
             $to_out_item['title'] = trim(preg_replace('/\s+/', ' ', $raw_title));
         
@@ -66,7 +65,7 @@ if (!empty($_GET['q'])) {
     
     $to_out['docs'] = $sliced_docs;
     
-    print json_encode($to_out, JSON_PRETTY_PRINT);
+    print json_encode($to_out);
 }
 
 ?>

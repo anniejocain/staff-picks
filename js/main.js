@@ -96,10 +96,15 @@ var search_lc = function() {
                 $.ajax({
                     url: 'services/amazon.php?query=' + isbn,
                     dataType: 'json',
-                    success: function(data){
+                    success: function(data) {
                         if(data[0]) {
-                            image.attr('src', data[0].thumbnail).attr('data-cover', data[0].display);
-                        }
+                            if (data[0].thumbnail !== "") {
+                                console.log(data[0].thumbnail);
+                                image.attr('src', data[0].thumbnail).attr('data-cover', data[0].display);
+                            } else {
+                                console.log('no cover found');
+                            }
+                        } else {console.log('no data 0')}
                     }
                 });
             });
