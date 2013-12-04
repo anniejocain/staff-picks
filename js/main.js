@@ -73,16 +73,22 @@ var search_lc = function() {
     // get search term from input
     // send it to cloud. get results. populate column with results.
 
+    $('#loading-img').fadeIn('fast');
+
     //var url = 'http://librarycloud.harvard.edu/v1/api/item/?filter=keyword:' + q + '&start=' + start + '&limit=3';
-    var url = "services/search.php?q=" + q;
+    var url = "services/search.php?q=" + q + "&start=" + start;
     $.ajax({
         url: url,
         dataType: 'json',
         success: function(data){
             $('#results').html(template({results: data['docs']}));
             num_found = data.num_found;
-            $('#result_count').html(num_found.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' matches');
+            //$('#result_count').html(num_found.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' matches');
+            if (!num_found){
+                $('#result_count').html("No results found");
+            }
             button_manager();
+            $('#loading-img').fadeOut('fast');
             $( ".result-item" ).draggable({ revert: "invalid", cursor: 'move' });
             $( ".cover-image" ).each(function( item ) {
                 var image = $(this);
@@ -150,6 +156,7 @@ var button_manager = function() {
 $( "#search-form" ).submit(function( event ) {
 	q = $( "input:first" ).val();
     start = 0;
+    $('#result_count').html("");
     search_lc();
 	event.preventDefault();
 });
@@ -166,7 +173,7 @@ $( "#search-prev" ).click(function() {
 
 // When the next paging button is clicked
 $( "#search-next" ).click(function() {
-    if (!(start + 3 >= num_found)) {
+    if (!(start + 3 >= 25)) {
         start = start + 3;
     }
     button_manager();
@@ -178,11 +185,11 @@ $("#results").hover(function() {
 });
 
 $( "#results" ).hover(
-function() {
-$("#drop-box").addClass("target-highlight");
-}, function() {
-$("#drop-box").removeClass("target-highlight");
-}
+    function() {
+        $("#drop-box").addClass("target-highlight");
+    }, function() {
+        $("#drop-box").removeClass("target-highlight");
+    }
 );
 
 // When an items is dragged from the the results list to the box

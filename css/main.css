@@ -15,11 +15,17 @@ a:hover, a:focus {
     margin-right:30px;
     height:60px;
     font-family: 'PT Sans Narrow', sans-serif;
-	font-size: 32px;
+	font-size: 44px;
+}
+
+#header img {
+    height: 35px;
+    margin-top: -10px;
+    margin-left: 10px;
 }
 
 .main-container {
-    margin-top:60px;
+    margin-top:75px;
 	width: 100%;
     overflow: auto;
     white-space: nowrap; 
@@ -52,7 +58,7 @@ a:hover, a:focus {
 .pick .title {
 	font-family: 'PT Sans Narrow', sans-serif;
 	color: #444;
-	font-size: 22px;
+	font-size: 24px;
 	margin-top: 8px;
 	margin-bottom:0px;
 }
@@ -63,7 +69,14 @@ a:hover, a:focus {
 
 .proj-desc {
     white-space: normal;
-    width: 300px;
+    font-size: 17px;
+    color: #555;
+    margin-bottom: 80px;
+}
+
+.proj-desc-title {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 44px;
 }
 
 .search-hollis {
@@ -71,6 +84,16 @@ a:hover, a:focus {
 	display:inline;
 	float:left;
 	margin-right:30px;
+}
+
+#search-prev, #search-next {
+    margin-top:5px;
+}
+
+#loading-img {
+    display: none;
+    margin-top:5px;
+    margin-left:3px;
 }
 
 .add-yours {
@@ -102,6 +125,7 @@ img#drop-box {
 }
 
 #search-form input {
+    border-radius: 0px;
     border-color:#00A8C6;
 }
 

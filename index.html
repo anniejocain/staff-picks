@@ -17,11 +17,10 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	
     <link href="css/main.css" rel="stylesheet">
-
   </head>
 
   <body>
-	<div id="header">Staff Picks 2013</div>
+	<div id="header">Staff Picks<img src="img/cart.png"></div>
     <div class="main-container">
 		<div id="pick-container">
 			<div class="search-hollis pick">
@@ -38,6 +37,7 @@
 				<button type="button" class="btn btn-default" id="search-next">
 				  <span class="glyphicon glyphicon-chevron-right"></span>
 				</button>
+				<img src="img/loader.gif" id="loading-img">
 				<p id="result_count"></p>
 
 				<div id="results"></div>
@@ -45,8 +45,9 @@
 
 	    	<div class="add-yours pick">
 	    		<div class="pick-target" id="drop-box">
-                    <p class="proj-desc">If the Harvard University Library was the world's largest bookstore, and the staff were to put together a Staff Picks bookshelf, what would it look like?</p>
-                    <p class="proj-desc">All Harvard staff and library affiliates are invited to add something they read and loved in 2013 to the Staff Picks bookshelf. On December d, the selection process will end and the shelf will be open for viewing.</p>
+					<p class="proj-desc-title">Staff Picks 2013</p>
+                    <p class="proj-desc">If the Harvard University Library was not a library, but the world's largest bookstore, what would the Staff Picks shelf look like?</p>
+<!--                    <p class="proj-desc">All Harvard staff and library affiliates are invited to add something they read and loved in 2013 to the Staff Picks bookshelf. On December d, the selection process will end and the shelf will be open for viewing.</p>-->
                     <button id="add-pick" type="button" class="btn btn-lg btn-block">Add your own</button>
                     <div class="target-group">
                         <h3>Drop your pick here</h3>
