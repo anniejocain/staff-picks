@@ -67,7 +67,6 @@ var num_found = 0;
 var q = '';
 
 
-
 var search_lc = function() {
     // Send our queries to LibraryCloud and write the results to the screen
     // get search term from input
@@ -98,13 +97,16 @@ var search_lc = function() {
                     dataType: 'json',
                     success: function(data) {
                         if(data[0]) {
-                            if (data[0].thumbnail !== "") {
-                                console.log(data[0].thumbnail);
-                                image.attr('src', data[0].thumbnail).attr('data-cover', data[0].display);
-                            } else {
-                                console.log('no cover found');
-                            }
-                        } else {console.log('no data 0')}
+                            image.attr('src', data[0].thumbnail).attr('data-cover', data[0].display);
+                        }
+                    },
+                    complete: function(data) {
+                        var attr = $(image).attr('src');
+                        if (!attr) {
+                            var stock_cover_num = Math.floor(Math.random() * 4) + 1;
+                            var image_cover_path = 'img/covers/stock/cover' + stock_cover_num + '.png'
+                            image.attr('src', image_cover_path).attr('data-cover', image_cover_path);
+                        }
                     }
                 });
             });
@@ -113,7 +115,20 @@ var search_lc = function() {
 }
 
 $( "#pick-form" ).submit(function(event){
-    var selected_by = $('#moniker').val() + ' in ' + $('#library').val();
+    
+    var moniker = "A reader";
+    var location = "the library";
+    
+    if ($('#moniker').val()) {
+        moniker = $('#moniker').val();
+    }
+    
+    if ($('#library').val()) {
+        location = $('#library').val();
+    }
+    
+
+    var selected_by = moniker + ' in ' + location;
     var title = $('.picked').find('.title').text();
     var hollis = $('.picked').data('hollis');
     var cover = $('.picked img').data('cover');

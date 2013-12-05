@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="img/cart.png">
     <meta name="description" content="">
     <meta name="author" content="Harvard Library Innovation Lab">
     <link rel="shortcut icon" href="img/favicon.png">
@@ -81,7 +82,7 @@
 			<a href="http://hollis.harvard.edu/?itemid=|library/m/aleph|{{hollis}}" target="_blank">
 				<p class="title">{{dotdotdot title 40}}</p>
 			</a>
-			<p class="picked_by"><span class="picked_by_desc">selected by </span>{{dotdotdot selected_by 90}}</p>
+			<p class="picked_by"><span class="picked_by_desc">selected by </span>{{selected_by}}</p>
 		</div>
 		</div>
 		{{/each}}
@@ -90,11 +91,9 @@
 	<script id="results-template" type="text/x-handlebars-template">
 		{{#each results}}
 		<li class="result-item" data-hollis="{{id_inst}}">
-		    {{#if id_isbn}}
-		        <img src="" data-isbn="{{id_isbn}}" class="cover-image" data-cover="">
-		    {{/if}}
-		    <p class="title">{{title}}</p>
-		    <p class="creator">{{creator}}</p>
+	        <img src="" data-isbn="{{id_isbn}}" class="cover-image" data-cover="">
+		    <p class="title">{{dotdotdot title 20}}</p>
+		    <p class="creator">{{dotdotdot creator 20}}</p>
 		</li>
 		{{/each}}
 	</script>

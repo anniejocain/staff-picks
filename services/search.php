@@ -15,13 +15,13 @@ if (!empty($_GET['q'])) {
         $start = $_GET['start'];
     }
     
-    $formats = "+material-id:matBook";
+    $formats = "";//"+material-id:matBook";
     
     $url = "http://webservices.lib.harvard.edu/rest/hollis/search/mods/?$q$formats";
     $agent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)';
     $ch = curl_init();
 
-    // set URL and other appropriate options  
+    // set URL and other appropriate options
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_HEADER, 0);
     curl_setopt($ch, CURLOPT_USERAGENT, $agent);
