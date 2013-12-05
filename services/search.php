@@ -15,9 +15,10 @@ if (!empty($_GET['q'])) {
         $start = $_GET['start'];
     }
     
-    $formats = "";//"+material-id:matBook";
+    $formats = "+material-id:matBook";
     
     $url = "http://webservices.lib.harvard.edu/rest/hollis/search/mods/?$q$formats";
+
     $agent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)';
     $ch = curl_init();
 
@@ -42,22 +43,26 @@ if (!empty($_GET['q'])) {
     $docs = array();
     if (!empty($xml_response->resultSet->item)) {
         foreach ($xml_response->resultSet->item as $item) {
-            $to_out_item = array();
-            $raw_title = (string) $item->mods->titleInfo->title[0];
-            $to_out_item['title'] = trim(preg_replace('/\s+/', ' ', $raw_title));
+//            $ns_dc = $item->children('http://purl.org/dc/elements/1.1/');
+            
+//            if ($ns_dc->format == 'Book') {
+                $to_out_item = array();
+                $raw_title = (string) $item->mods->titleInfo->title[0];
+                $to_out_item['title'] = trim(preg_replace('/\s+/', ' ', $raw_title));
         
-            $raw_creator = (string) $item->mods->name[0]->namePart[0];
-            $to_out_item['creator'] = trim(preg_replace('/\s+/', ' ', $raw_creator));
+                $raw_creator = (string) $item->mods->name[0]->namePart[0];
+                $to_out_item['creator'] = trim(preg_replace('/\s+/', ' ', $raw_creator));
         
-            $raw_id_inst = (string) $item->mods->recordInfo[0]->recordIdentifier[0];
-            $raw_id_inst = preg_replace('/-\d$/', ' ', $raw_id_inst);
-            $to_out_item['id_inst'] = trim(preg_replace('/\s+/', ' ', $raw_id_inst));
+                $raw_id_inst = (string) $item->mods->recordInfo[0]->recordIdentifier[0];
+                $raw_id_inst = preg_replace('/-\d$/', ' ', $raw_id_inst);
+                $to_out_item['id_inst'] = trim(preg_replace('/\s+/', ' ', $raw_id_inst));
+                    
+                $raw_isbn = (string) $item->mods->identifier[0];
+                $raw_isbn = preg_replace("/\s.*/", "", $raw_isbn);
+                $to_out_item['id_isbn'] = trim(preg_replace('/\s+/', ' ', $raw_isbn));
         
-            $raw_isbn = (string) $item->mods->identifier[0];
-            $raw_isbn = preg_replace("/\s.*/", "", $raw_isbn);
-            $to_out_item['id_isbn'] = trim(preg_replace('/\s+/', ' ', $raw_isbn));
-        
-            $docs[] = $to_out_item;
+                $docs[] = $to_out_item;
+//            }
         }
     }
     
