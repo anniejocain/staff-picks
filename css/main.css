@@ -24,18 +24,20 @@ a:hover, a:focus {
 }
 
 .main-container {
-    position:relative;
+    position:fixed;
     float:left;
     margin-top:5px;
 	width: 100%;
     overflow-x: auto;
     white-space: nowrap;
+    height:100%;
 }
 
 #pick-container {
     margin-left:-255px;
     position:relative;
 	padding:15px;
+	margin-top:75px;
 }
 
 .pick {
