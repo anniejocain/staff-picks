@@ -27,7 +27,7 @@ a:hover, a:focus {
 .main-container {
     margin-top:75px;
 	width: 100%;
-    overflow: auto;
+    overflow-x: auto;
     white-space: nowrap; 
 }
 
