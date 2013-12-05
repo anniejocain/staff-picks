@@ -21,7 +21,7 @@
   </head>
 
   <body>
-	<div id="header">Staff Picks<img src="img/cart.png"></div>
+	<div id="header">Staff Picks</div>
     <div class="main-container">
 		<div id="pick-container">
 			<div class="search-hollis pick">
@@ -92,21 +92,18 @@
 		{{#each results}}
 		<li class="result-item" data-hollis="{{id_inst}}">
 	        <img src="" data-isbn="{{id_isbn}}" class="cover-image" data-cover="">
-			<p class="title">
-			{{#if title}}
-		    	{{dotdotdot title 20}}
-			{{else}}
-				A work
-			{{/if}}
-			</p>
 			
-			<p class="creator">
-			{{#if creator}}
-		    	{{dotdotdot creator 20}}
+			{{#if title}}
+		    	<p class="title">{{dotdotdot title 20}}</p>
 			{{else}}
-				a creator
+				<p class="title">A work</p>
 			{{/if}}
-			</p>
+			
+			{{#if creator}}
+		    	<p class="creator">{{dotdotdot creator 20}}</p>
+			{{else}}
+				<p class="creator">a creator</p>
+			{{/if}}
 		</li>
 		{{/each}}
 	</script>
