@@ -3,7 +3,7 @@
 // Receive a new item. Add it to the DB. Get cover and store it.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    if(!empty($_POST['title']) && !empty($_POST['hollis']) && !empty($_POST['selected_by'])) {
+    if(!empty($_POST['title']) && !empty($_POST['selected_by'])) {
         
         $settings = parse_ini_file("../etc/settings.ini", true);
         

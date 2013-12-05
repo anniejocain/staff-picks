@@ -92,8 +92,21 @@
 		{{#each results}}
 		<li class="result-item" data-hollis="{{id_inst}}">
 	        <img src="" data-isbn="{{id_isbn}}" class="cover-image" data-cover="">
-		    <p class="title">{{dotdotdot title 20}}</p>
-		    <p class="creator">{{dotdotdot creator 20}}</p>
+			<p class="title">
+			{{#if title}}
+		    	{{dotdotdot title 20}}
+			{{else}}
+				A work
+			{{/if}}
+			</p>
+			
+			<p class="creator">
+			{{#if creator}}
+		    	{{dotdotdot creator 20}}
+			{{else}}
+				a creator
+			{{/if}}
+			</p>
 		</li>
 		{{/each}}
 	</script>
