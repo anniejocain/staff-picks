@@ -18,6 +18,7 @@ Create the DB. If you're using MySQL, you might do something like this:
 
 ### Set permissions
 Images are saved in staff-picks/img and your webserver will need to write to that directory. Change that directory to be owned by your webserver's user, or just open the permissions wide:
+
         chmod 777 covers
 
 ## License
