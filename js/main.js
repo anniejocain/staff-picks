@@ -1,8 +1,8 @@
 var items; // Our selections.
 
-Handlebars.registerHelper('dotdotdot', function(str) {
-  if (str.length > 30)
-    return str.substring(0,30) + '...';
+Handlebars.registerHelper('dotdotdot', function(str, desired_length) {
+  if (str.length > desired_length)
+    return str.substring(0,desired_length) + '...';
   return str;
 });
 
@@ -130,7 +130,8 @@ $( "#pick-form" ).submit(function(event){
     
 
     var selected_by = moniker + ' in ' + location;
-    var title = $('.picked').find('.title').text();
+    //var title = $('.picked').find('.title').text();
+    var title = $('.picked').data('title');
     var hollis = $('.picked').data('hollis');
     var cover = $('.picked img').data('cover');
     $.ajax({

@@ -15,7 +15,7 @@ if (!empty($_GET['q'])) {
         $start = $_GET['start'];
     }
     
-    $formats = "+material-id:matBook";
+    $formats = "";//"+material-id:matBook";
     
     $url = "http://webservices.lib.harvard.edu/rest/hollis/search/mods/?$q$formats";
 
