@@ -25,7 +25,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else{
             $cover_path = download_file($_POST['cover_path'], $hollis);
         }
-    
+        
+        
+        // Massage the Hollis ID a little
+        $hollis = $_POST["hollis"];
+        $hollisLen = strlen($hollis);
+        if ($hollisLen < 9) {
+            $loop = 9 - $hollisLen;
+            for($j=0; $j<$loop; $j++){
+                $hollis = '0'.$hollis;
+            }
+        }
+
+        $hollis = substr($hollis, 0, 9);
+
         // We should now have all of our values. Let's write them to the DB    
        $con = mysql_connect($settings['MYSQL']['HOST'],$settings['MYSQL']['USER'],$settings['MYSQL']['PASS']);
        if (!$con) {
@@ -36,10 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
        $sqlCmd = sprintf("INSERT INTO item (title, hollis, isbn, selected_by, cover_path) 
          VALUES ('%s','%s','%s','%s','%s')", 
-          mysql_real_escape_string($_POST["title"]),
-          mysql_real_escape_string($_POST["hollis"]),
-          mysql_real_escape_string($_POST["isbn"]),
-          mysql_real_escape_string($_POST["selected_by"]),
+          mysql_real_escape_string($title),
+          mysql_real_escape_string($hollis),
+          mysql_real_escape_string($isbn),
+          mysql_real_escape_string($selected_by),
           mysql_real_escape_string($cover_path));
 
        mysql_query($sqlCmd);
