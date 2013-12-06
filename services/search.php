@@ -47,8 +47,15 @@ if (!empty($_GET['q'])) {
             
 //            if ($ns_dc->format == 'Book') {
                 $to_out_item = array();
+                
+                $raw_title_article = (string) $item->mods->titleInfo->nonSort[0];
                 $raw_title = (string) $item->mods->titleInfo->title[0];
-                $to_out_item['title'] = trim(preg_replace('/\s+/', ' ', $raw_title));
+                
+                if (!empty($raw_title_article)) {
+                    $to_out_item['title'] = $raw_title_article . trim(preg_replace('/\s+/', ' ', $raw_title));
+                } else {
+                    $to_out_item['title'] = trim(preg_replace('/\s+/', ' ', $raw_title));                    
+                }
         
                 $raw_creator = (string) $item->mods->name[0]->namePart[0];
                 $to_out_item['creator'] = trim(preg_replace('/\s+/', ' ', $raw_creator));
