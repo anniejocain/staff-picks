@@ -67,11 +67,14 @@ var start = 0;
 var num_found = 0;
 var q = '';
 
-
 var search_lc = function() {
     // Send our queries to LibraryCloud and write the results to the screen
     // get search term from input
     // send it to cloud. get results. populate column with results.
+
+    if (!q) {
+        return;
+    }
 
     $('#loading-img').fadeIn('fast');
 
