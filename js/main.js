@@ -52,6 +52,7 @@ $('#add-pick').click(function(){
 		left: "+=255",
 		}, 500, function() {
 		$('#add-pick,.proj-desc, .proj-desc-title, #lil').fadeOut(350);
+		$('#search-box').select();
 		$('.target-group').fadeIn(350);
 	});
 	//$('.search-hollis').toggle('slide');
@@ -225,6 +226,7 @@ $( "#drop-box" ).droppable({
         $('.result-item').draggable('disable');
         $('.target-group').fadeOut('slow');
         $('#pick-form').fadeIn('slow');
+        $('#moniker').select();
         $( this ).parent()
         .addClass("target-acquired");
         $(ui.draggable).addClass('picked');
