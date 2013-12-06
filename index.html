@@ -79,7 +79,7 @@
 		</a>
 		<div class="pick-text">
 			<a href="http://hollis.harvard.edu/?itemid=|library/m/aleph|{{hollis}}" target="_blank">
-				<p class="title">{{dotdotdot title 45}}</p>
+				<p class="title">{{dotdotdot title 37}}</p>
 			</a>
 			<p class="picked_by"><span class="picked_by_desc">selected by </span>{{selected_by}}</p>
 		</div>
@@ -89,17 +89,17 @@
 	
 	<script id="results-template" type="text/x-handlebars-template">
 		{{#each results}}
-		<li class="result-item" data-hollis="{{id_inst}}">
+		<li class="result-item" data-hollis="{{id_inst}}" data-title="{{title}}">
 	        <img src="" data-isbn="{{id_isbn}}" class="cover-image" data-cover="">
 			
 			{{#if title}}
-		    	<p class="title">{{dotdotdot title 20}}</p>
+		    	<p class="title">{{dotdotdot title 30}}</p>
 			{{else}}
 				<p class="title">A work</p>
 			{{/if}}
 			
 			{{#if creator}}
-		    	<p class="creator">{{dotdotdot creator 20}}</p>
+		    	<p class="creator">{{dotdotdot creator 30}}</p>
 			{{else}}
 				<p class="creator">a creator</p>
 			{{/if}}
