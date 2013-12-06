@@ -3,8 +3,13 @@ body {
 	color: #222;
 }
 
+a {
+    color:#333;
+}
+
 a:hover, a:focus {
     text-decoration:none;
+    color:#222;
 }
 
 #header {
@@ -162,8 +167,19 @@ img#drop-box {
 }
 
 .pick-target {
-	height:340px;
+	height:540px;
 }
+
+#lil {
+    opacity:.8;
+    margin-top:235px;
+    font-size:13px;
+}
+
+#lil img{
+    height:40px;
+    margin-right:5px;
+}   
 
 .target-group {
     display:none;

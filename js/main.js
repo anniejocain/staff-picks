@@ -51,7 +51,7 @@ $('#add-pick').click(function(){
 	 $( "#pick-container" ).animate({
 		left: "+=255",
 		}, 500, function() {
-		$('#add-pick,.proj-desc, .proj-desc-title').fadeOut(350);
+		$('#add-pick,.proj-desc, .proj-desc-title, #lil').fadeOut(350);
 		$('.target-group').fadeIn(350);
 	});
 	//$('.search-hollis').toggle('slide');
