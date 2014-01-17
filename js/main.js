@@ -26,6 +26,36 @@ var get_items = function() {
     });
 }
 
+$( "#filters" ).on( "click", ".filter", function() {
+    $('.filter-active').removeClass('filter-active').addClass('filter');
+    $(this).addClass('filter-active').removeClass('filter');
+    $(this).find('.glyphicon').addClass('glyphicon-remove');
+    var category = $(this).data('category');
+    $.ajax({
+        url: 'services/read.php?filter=' + category,
+        dataType: 'json',
+        cache: false,
+        success: function(data) {
+            items = data.items;
+            $("#staff-picks").fadeOut("slow", function() {
+				$('#staff-picks').html('');
+				draw_selections();
+				$('#staff-picks').fadeIn();
+			});
+        }
+    });
+});
+
+$( "#filters" ).on( "click", ".filter-active", function() {
+    $(this).removeClass('filter-active').addClass('filter');
+    $(this).find('.glyphicon').removeClass('glyphicon-remove');
+    $("#staff-picks").fadeOut("slow", function() {
+        $('#staff-picks').html('');
+		get_items();
+		$('#staff-picks').fadeIn();
+	});
+});
+
 var selections_source = $('#pick-template').html();
 var selections_template = Handlebars.compile(selections_source);
 

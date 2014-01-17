@@ -89,7 +89,7 @@ if (strpos(strtolower($raw), 'humor') !== FALSE)
     $humor = 1; 
 if (strpos(strtolower($raw), 'biography') !== FALSE)
     $biography = 1; 
-if (strpos(strtolower($raw), 'history') !== FALSE)
+if (strpos(strtolower($raw), 'history') !== FALSE && $fiction === 0)
     $history = 1; 
 if (strpos(strtolower($raw), 'comics') !== FALSE)
     $comics = 1; 

@@ -1,4 +1,4 @@
-body {
+body, h5 {
 	font-family: 'Open Sans', sans-serif;
 	color: #222;
 }
@@ -81,7 +81,8 @@ a:hover, a:focus {
     white-space: normal;
     font-size: 17px;
     color: #555;
-    margin-bottom: 80px;
+    /*margin-bottom: 80px;*/
+    margin-bottom:25px;
 }
 
 .proj-desc-title {
@@ -172,7 +173,8 @@ img#drop-box {
 
 #lil {
     opacity:.8;
-    margin-top:235px;
+    /*margin-top:235px;*/
+    margin-top:45px;
     font-size:13px;
 }
 
@@ -194,7 +196,7 @@ img#drop-box {
     color: #00A8C6;
 }
 
-.pick-target .glyphicon {
+/*.pick-target .glyphicon {
 	font-size:172px;
 	color:#00A8C6;
 	opacity:.3;
@@ -202,7 +204,7 @@ img#drop-box {
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
-}
+}*/
 
 .target-highlight .glyphicon {
     opacity:.7;
@@ -224,15 +226,43 @@ img#drop-box {
 	display:none;
 }
 
-#okay-pick, #add-pick {
+#filters .glyphicon {
+    color:#fff;
+    font-size:14px;
+    margin-top:2px;
+}
+
+.filter, .filter-active {
+    padding: 4px 12px;
+}
+
+.filter, .filter:focus, .filter:active {
+    display:block;
+    width:200px;
+    background-color:#fff;
+    color:#00A8C6;
+    text-align:left;
+}
+
+.filter:hover {
+    border-color:#006f82;
+    background-color:#fff;
+    color:#008ba4;
+}
+
+#okay-pick, #add-pick, .filter-active, .filter-active:focus, .filter-active:active {
     background-color:#00A8C6;
     border-color:#009ab5;
     color:#fff;
+    width:200px;
+    display:block;
+    text-align:left;
 }
 
-#okay-pick:hover, #add-pick:hover {
+#okay-pick:hover, #add-pick:hover, .filter-active:hover {
     background-color:#009ab5;
     border-color:#008ba4;
+    color:#fff;
 }
 
 .twitter-typeahead .tt-query,
