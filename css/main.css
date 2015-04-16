@@ -81,8 +81,8 @@ a:hover, a:focus {
     white-space: normal;
     font-size: 17px;
     color: #555;
-    /*margin-bottom: 80px;*/
-    margin-bottom:25px;
+    margin-bottom: 80px;
+    /*margin-bottom:25px;*/
 }
 
 .proj-desc-title {
@@ -173,8 +173,8 @@ img#drop-box {
 
 #lil {
     opacity:.8;
-    /*margin-top:235px;*/
-    margin-top:45px;
+    margin-top:235px;
+    /*margin-top:45px;*/
     font-size:13px;
 }
 
@@ -196,7 +196,7 @@ img#drop-box {
     color: #00A8C6;
 }
 
-/*.pick-target .glyphicon {
+.pick-target .glyphicon {
 	font-size:172px;
 	color:#00A8C6;
 	opacity:.3;
@@ -204,7 +204,7 @@ img#drop-box {
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
-}*/
+}
 
 .target-highlight .glyphicon {
     opacity:.7;
@@ -254,15 +254,15 @@ img#drop-box {
     background-color:#00A8C6;
     border-color:#009ab5;
     color:#fff;
-    width:200px;
+    /*width:200px;
     display:block;
-    text-align:left;
+    text-align:left;*/
 }
 
 #okay-pick:hover, #add-pick:hover, .filter-active:hover {
     background-color:#009ab5;
     border-color:#008ba4;
-    color:#fff;
+    /*color:#fff;*/
 }
 
 .twitter-typeahead .tt-query,
