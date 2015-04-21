@@ -81,8 +81,16 @@ a:hover, a:focus {
     white-space: normal;
     font-size: 17px;
     color: #555;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
     /*margin-bottom:25px;*/
+}
+
+.proj-desc-info {
+    display:block;
+    margin-top:15px;
+    margin-bottom:35px;
+    font-size:14px;
+    color:#aaa;
 }
 
 .proj-desc-title {
@@ -173,9 +181,10 @@ img#drop-box {
 
 #lil {
     opacity:.8;
-    margin-top:235px;
+    margin-top:105px;
     /*margin-top:45px;*/
     font-size:13px;
+    margin-bottom:15px;
 }
 
 #lil img{
